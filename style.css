@@ -1,0 +1,628 @@
+/* General Styles */
+* {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
+  color: #333;
+  background: #fff5f5; /* Soft pink background */
+}
+
+header {
+  background: #fb6f92; /* Bright pink */
+  color: #fff;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-family: "Outfit", sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+}
+
+header .nav-links {
+  list-style: none;
+  display: flex;
+}
+header .nav-links .li {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+header .nav-links li {
+  margin-left: 80px;
+}
+
+header .nav-links a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: black; /* Adjust text color */
+  padding-bottom: 5px; /* Space for the border */
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+
+  transition: color 0.3s;
+}
+
+.a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px; /* Adjust border thickness */
+  background-color: white; /* Adjust border color */
+  transition: width 0.3s ease-in-out;
+}
+
+.a:hover::after {
+  width: 100%;
+}
+
+.btn-booking {
+  background: #ff0867; /* Deep pink */
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  padding: 10px 20px;
+  margin-top: -9px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-booking:hover {
+  background: #ff6eb4; /* Lighter pink */
+}
+
+.hero {
+  background: url("img/pic3.jpg") no-repeat center/cover;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(255, 126, 185, 0.8); /* Overlay with pink */
+  background-blend-mode: multiply;
+}
+
+.hero-content h1 {
+  font-size: 56px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.hero-content p {
+  font-size: 24px;
+  margin-bottom: 30px;
+  margin-top: -13px;
+  color: #fff;
+}
+
+.btn {
+  background: #ff0867; /* Deep pink */
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #ff6eb4; /* Lighter pink */
+}
+
+.services,
+.gallery,
+.about,
+.testimonials,
+.booking,
+.contact {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff; /* White background for sections */
+}
+
+.services h2,
+.gallery h2,
+.about h2,
+.testimonials h2,
+.booking h2,
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #ff1493; /* Deep pink for headings */
+}
+
+.service-item,
+.testimonial-item {
+  width: 30%;
+  margin-bottom: 20px;
+  background: #fff5f5; /* Soft pink background for cards */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Services Section */
+.services {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.services h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #ff1493; /* Deep pink */
+}
+
+.service-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between boxes */
+  padding: 20px;
+}
+
+.service-item {
+  width: 150px;
+  height: 210px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+
+  transition: width 0.5s ease, flex-grow 0.5s ease;
+  flex-shrink: 0;
+  cursor: pointer;
+  background: #ff7eb9;
+}
+.service-item h3 {
+  margin-top: -4px;
+  font-family: "Outfit", sans-serif;
+font-size: 17px;
+  font-weight: 500;
+  color: white;
+  opacity: 1;
+}
+
+.service-item img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.service-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(251, 111, 146, 0.9);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 5px;
+
+  box-sizing: border-box;
+}
+
+.service-item:hover {
+  width: 300px; /* Expanded width on hover */
+  flex-grow: 1; /* Allow the box to grow */
+}
+
+.service-item:hover .service-content {
+  opacity: 1; /* Show details on hover */
+
+}
+.service-item:hover h3{
+    display: block;
+
+}
+
+
+.service-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.service-details {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.service-item:hover .service-details {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Shrink other boxes when one is hovered */
+.service-list:hover .service-item:not(:hover) {
+  width: 50px; /* Shrink other boxes */
+}
+
+.testimonial-item img {
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff5f5; /* Soft pink background */
+  overflow: hidden; /* Hide overflow for sliding effect */
+}
+
+.gallery h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #ff1493; /* Deep pink */
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between the two rows */
+}
+
+.slider-row {
+  overflow: hidden; /* Hide overflow for sliding effect */
+  white-space: nowrap; /* Keep images in a single line */
+  position: relative;
+}
+
+.slider-track {
+  display: inline-block;
+  animation: slide 20s linear infinite; /* Sliding animation */
+}
+
+.slider-row-right .slider-track {
+  animation-direction: normal; /* Slide to the right */
+}
+
+.slider-row-left .slider-track {
+  animation-direction: reverse; /* Slide to the left */
+}
+
+.slider-track img {
+  width: 200px; /* Adjust image width */
+  height: 150px; /* Adjust image height */
+  object-fit: cover;
+  margin: 0 10px; /* Space between images */
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Fade-out effect for disappearing images */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Move track by 50% for seamless looping */
+  }
+}
+
+/* Fade-out effect for images at the edges */
+.slider-row::before,
+.slider-row::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px; /* Width of the fade-out area */
+  z-index: 2;
+  pointer-events: none; /* Allow clicking through the overlay */
+}
+
+.slider-row::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #fff5f5,
+    transparent
+  ); /* Fade-out effect on the left */
+}
+
+.slider-row::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #fff5f5,
+    transparent
+  ); /* Fade-out effect on the right */
+}
+.about p {
+  font-size: 18px;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.booking form,
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.booking form input,
+.booking form select,
+.contact form input,
+.contact form textarea {
+  margin-bottom: 20px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ff7eb9; /* Pink border */
+  border-radius: 5px;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff5f5; /* Soft pink background */
+}
+
+.testimonials h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #ff1493; /* Deep pink */
+}
+
+.testimonial-slider {
+  position: relative;
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.testimonial-item {
+  /* Hide all testimonials by default */
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonial-item.active {
+  /* Show the active testimonial */
+  animation: fadeIn 0.5s ease;
+}
+
+.testimonial-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.testimonial-item p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.testimonial-item h4 {
+  font-size: 20px;
+  color: #ff1493; /* Deep pink */
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff5f5; /* Soft pink background */
+}
+
+.testimonials h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #ff1493; /* Deep pink */
+}
+
+.testimonial-slider {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.testimonial-item {
+  flex: 0 0 33.33%; /* Show 3 testimonials in one line */
+  padding: 20px;
+  width: 50px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 0 10px; /* Space between testimonials */
+}
+
+.testimonial-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.testimonial-item p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.testimonial-item h4 {
+  font-size: 20px;
+  color: #ff1493; /* Deep pink */
+}
+
+/* Navigation Buttons */
+ .slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ff1493; /* Deep pink */
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 20px;
+  transition: background 0.3s ease;
+}
+
+.slider-button:hover {
+  background: #ff6eb4; /* Lighter pink */
+}
+
+.slider-button.prev {
+  left: 10px;
+}
+
+.slider-button.next {
+  right: 10px;
+}
+
+/* Navigation Buttons */
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ff1493; /* Deep pink */
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 20px;
+  transition: background 0.3s ease;
+}
+
+.slider-button:hover {
+  background: #ff6eb4; /* Lighter pink */
+}
+
+.slider-button.prev {
+  left: 10px;
+}
+
+.slider-button.next {
+  right: 10px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.contact-info {
+  margin-bottom: 30px;
+  margin-left: -60%;
+  margin-top: 50px;
+  text-align: left;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #ff1493; /* Deep pink */
+}
+.contact{
+    background: #ff7eb9; /* Bright pink */
+    display: flex;
+    justify-content: space-between;
+    
+}
+.contact form{
+  margin-left: 70px;
+  margin-top: -70px;
+}
+.contact form input{
+  width: 150%;
+}
+form textarea{
+  width: 150%;
+}
+
+
+footer {
+  background: #ff7eb9; /* Bright pink */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  height: 455px;
+
+}
+
+footer .p{
+margin-bottom: -50px;
+background-color: #ff0867;
+margin-left: 0%;
+margin-left: -20px;
+margin-right: -20px;
+
+
+}
+
+footer .social-links .a{
+  margin-left: -180%;
+  color: #ff0867;
+}
+
+footer .social-links .a i{
+  color: #ff0867;
+}
+footer .social-links a {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+footer .social-links a:hover {
+  color: #ffd1dc; /* Light pink */
+}
